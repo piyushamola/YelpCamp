@@ -17,9 +17,10 @@ var indexRoutes      =require("./routes/index"),
     
     
 
-    
+    var url=process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
 
-mongoose.connect("mongodb://piyushamola:avengerway@ds241489.mlab.com:41489/yelpcamp");
+mongoose.connect(url);
+// "mongodb://piyushamola:avengerway@ds241489.mlab.com:41489/yelpcamp"
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs");
