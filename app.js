@@ -2,11 +2,8 @@ var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
     mongoose    = require("mongoose"),
-    seedDb      = require("./seeds"),
-    Campground  = require("./models/campground"),
     passport    = require("passport"),
 LocalStrategy   = require("passport-local"),
-    Comment     = require("./models/comment"),
     User        = require("./models/user"),
 methodOverride  = require("method-override"),
     flash       = require("connect-flash");
@@ -22,7 +19,7 @@ var indexRoutes      =require("./routes/index"),
 
     
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://piyushamola:avengerway@ds241489.mlab.com:41489/yelpcamp");
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs");
